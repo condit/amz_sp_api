@@ -67,17 +67,6 @@ rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
 end
 
 api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
-shipment_id = 'shipment_id_example' # String | The Amazon-defined shipment identifier for the shipment to cancel.
-
-
-begin
-  result = api_instance.cancel_shipment_old(shipment_id)
-  p result
-rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
-  puts "Exception when calling MerchantFulfillmentApi->cancel_shipment_old: #{e}"
-end
-
-api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
 body = AmzSpApi::MerchantFulfillmentApiModel::CreateShipmentRequest.new # CreateShipmentRequest | 
 
 
@@ -100,17 +89,6 @@ rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
 end
 
 api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
-body = AmzSpApi::MerchantFulfillmentApiModel::GetAdditionalSellerInputsRequest.new # GetAdditionalSellerInputsRequest | 
-
-
-begin
-  result = api_instance.get_additional_seller_inputs_old(body)
-  p result
-rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
-  puts "Exception when calling MerchantFulfillmentApi->get_additional_seller_inputs_old: #{e}"
-end
-
-api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
 body = AmzSpApi::MerchantFulfillmentApiModel::GetEligibleShipmentServicesRequest.new # GetEligibleShipmentServicesRequest | 
 
 
@@ -119,17 +97,6 @@ begin
   p result
 rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
   puts "Exception when calling MerchantFulfillmentApi->get_eligible_shipment_services: #{e}"
-end
-
-api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
-body = AmzSpApi::MerchantFulfillmentApiModel::GetEligibleShipmentServicesRequest.new # GetEligibleShipmentServicesRequest | 
-
-
-begin
-  result = api_instance.get_eligible_shipment_services_old(body)
-  p result
-rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
-  puts "Exception when calling MerchantFulfillmentApi->get_eligible_shipment_services_old: #{e}"
 end
 
 api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
@@ -151,12 +118,9 @@ All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**cancel_shipment**](docs/MerchantFulfillmentApi.md#cancel_shipment) | **DELETE** /mfn/v0/shipments/{shipmentId} | 
-*AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**cancel_shipment_old**](docs/MerchantFulfillmentApi.md#cancel_shipment_old) | **PUT** /mfn/v0/shipments/{shipmentId}/cancel | 
 *AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**create_shipment**](docs/MerchantFulfillmentApi.md#create_shipment) | **POST** /mfn/v0/shipments | 
 *AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**get_additional_seller_inputs**](docs/MerchantFulfillmentApi.md#get_additional_seller_inputs) | **POST** /mfn/v0/additionalSellerInputs | 
-*AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**get_additional_seller_inputs_old**](docs/MerchantFulfillmentApi.md#get_additional_seller_inputs_old) | **POST** /mfn/v0/sellerInputs | 
 *AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**get_eligible_shipment_services**](docs/MerchantFulfillmentApi.md#get_eligible_shipment_services) | **POST** /mfn/v0/eligibleShippingServices | 
-*AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**get_eligible_shipment_services_old**](docs/MerchantFulfillmentApi.md#get_eligible_shipment_services_old) | **POST** /mfn/v0/eligibleServices | 
 *AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi* | [**get_shipment**](docs/MerchantFulfillmentApi.md#get_shipment) | **GET** /mfn/v0/shipments/{shipmentId} | 
 
 ## Documentation for Models
@@ -189,6 +153,7 @@ Class | Method | HTTP request | Description
  - [AmzSpApi::MerchantFulfillmentApiModel::CreateShipmentResponse](docs/CreateShipmentResponse.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::CurrencyAmount](docs/CurrencyAmount.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::CustomTextForLabel](docs/CustomTextForLabel.md)
+ - [AmzSpApi::MerchantFulfillmentApiModel::DangerousGoodsDetails](docs/DangerousGoodsDetails.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::DeliveryExperienceOption](docs/DeliveryExperienceOption.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::DeliveryExperienceType](docs/DeliveryExperienceType.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::DistrictOrCounty](docs/DistrictOrCounty.md)
@@ -221,6 +186,7 @@ Class | Method | HTTP request | Description
  - [AmzSpApi::MerchantFulfillmentApiModel::LabelFormatOption](docs/LabelFormatOption.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::LabelFormatOptionRequest](docs/LabelFormatOptionRequest.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::Length](docs/Length.md)
+ - [AmzSpApi::MerchantFulfillmentApiModel::LiquidVolume](docs/LiquidVolume.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::OrderItemId](docs/OrderItemId.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::PackageDimension](docs/PackageDimension.md)
  - [AmzSpApi::MerchantFulfillmentApiModel::PackageDimensions](docs/PackageDimensions.md)

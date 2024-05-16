@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**length** | [**BigDecimalType**](BigDecimalType.md) |  | 
-**width** | [**BigDecimalType**](BigDecimalType.md) |  | 
-**height** | [**BigDecimalType**](BigDecimalType.md) |  | 
-**unit** | [**UnitOfMeasurement**](UnitOfMeasurement.md) |  | 
+**height** | **Float** | Height. | 
+**length** | **Float** | Length. | 
+**unit_of_measurement** | [**UnitOfMeasurement**](UnitOfMeasurement.md) |  | 
+**width** | **Float** | Width. | 
 

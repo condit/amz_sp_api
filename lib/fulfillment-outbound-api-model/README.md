@@ -79,7 +79,7 @@ end
 
 api_instance = AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi.new
 body = AmzSpApi::FulfillmentOutboundApiModel::CreateFulfillmentReturnRequest.new # CreateFulfillmentReturnRequest | 
-seller_fulfillment_order_id = 'seller_fulfillment_order_id_example' # String | An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer's request to return items.
+seller_fulfillment_order_id = 'seller_fulfillment_order_id_example' # String | An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct `SellerFulfillmentOrderId` value based on the buyer's request to return items.
 
 
 begin
@@ -106,7 +106,7 @@ end
 api_instance = AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi.new
 marketplace_id = 'marketplace_id_example' # String | The marketplace for which to return the count.
 feature_name = 'feature_name_example' # String | The name of the feature.
-seller_sku = 'seller_sku_example' # String | Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+seller_sku = 'seller_sku_example' # String | Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's `SellerId`, which is included with every operation that you submit.
 
 
 begin
@@ -150,7 +150,7 @@ rescue AmzSpApi::FulfillmentOutboundApiModel::ApiError => e
 end
 
 api_instance = AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi.new
-package_number = 56 # Integer | The unencrypted package identifier returned by the getFulfillmentOrder operation.
+package_number = 56 # Integer | The unencrypted package identifier returned by the `getFulfillmentOrder` operation.
 
 
 begin
@@ -175,17 +175,29 @@ end
 
 api_instance = AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi.new
 seller_sku = 'seller_sku_example' # String | The seller SKU for which return reason codes are required.
-language = 'language_example' # String | The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into.
 opts = { 
   marketplace_id: 'marketplace_id_example', # String | The marketplace for which the seller wants return reason codes.
-  seller_fulfillment_order_id: 'seller_fulfillment_order_id_example' # String | The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+  seller_fulfillment_order_id: 'seller_fulfillment_order_id_example', # String | The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes.
+  language: 'language_example' # String | The language that the `TranslatedDescription` property of the `ReasonCodeDetails` response object should be translated into.
 }
 
 begin
-  result = api_instance.list_return_reason_codes(seller_sku, language, opts)
+  result = api_instance.list_return_reason_codes(seller_sku, opts)
   p result
 rescue AmzSpApi::FulfillmentOutboundApiModel::ApiError => e
   puts "Exception when calling FbaOutboundApi->list_return_reason_codes: #{e}"
+end
+
+api_instance = AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi.new
+body = AmzSpApi::FulfillmentOutboundApiModel::SubmitFulfillmentOrderStatusUpdateRequest.new # SubmitFulfillmentOrderStatusUpdateRequest | 
+seller_fulfillment_order_id = 'seller_fulfillment_order_id_example' # String | The identifier assigned to the item by the seller when the fulfillment order was created.
+
+
+begin
+  result = api_instance.submit_fulfillment_order_status_update(body, seller_fulfillment_order_id)
+  p result
+rescue AmzSpApi::FulfillmentOutboundApiModel::ApiError => e
+  puts "Exception when calling FbaOutboundApi->submit_fulfillment_order_status_update: #{e}"
 end
 
 api_instance = AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi.new
@@ -218,6 +230,7 @@ Class | Method | HTTP request | Description
 *AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi* | [**get_package_tracking_details**](docs/FbaOutboundApi.md#get_package_tracking_details) | **GET** /fba/outbound/2020-07-01/tracking | 
 *AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi* | [**list_all_fulfillment_orders**](docs/FbaOutboundApi.md#list_all_fulfillment_orders) | **GET** /fba/outbound/2020-07-01/fulfillmentOrders | 
 *AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi* | [**list_return_reason_codes**](docs/FbaOutboundApi.md#list_return_reason_codes) | **GET** /fba/outbound/2020-07-01/returnReasonCodes | 
+*AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi* | [**submit_fulfillment_order_status_update**](docs/FbaOutboundApi.md#submit_fulfillment_order_status_update) | **PUT** /fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status | 
 *AmzSpApi::FulfillmentOutboundApiModel::FbaOutboundApi* | [**update_fulfillment_order**](docs/FbaOutboundApi.md#update_fulfillment_order) | **PUT** /fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId} | 
 
 ## Documentation for Models
@@ -292,6 +305,8 @@ Class | Method | HTTP request | Description
  - [AmzSpApi::FulfillmentOutboundApiModel::Money](docs/Money.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::NotificationEmailList](docs/NotificationEmailList.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::PackageTrackingDetails](docs/PackageTrackingDetails.md)
+ - [AmzSpApi::FulfillmentOutboundApiModel::PaymentInformation](docs/PaymentInformation.md)
+ - [AmzSpApi::FulfillmentOutboundApiModel::PaymentInformationList](docs/PaymentInformationList.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::Quantity](docs/Quantity.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::ReasonCodeDetails](docs/ReasonCodeDetails.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::ReasonCodeDetailsList](docs/ReasonCodeDetailsList.md)
@@ -304,6 +319,8 @@ Class | Method | HTTP request | Description
  - [AmzSpApi::FulfillmentOutboundApiModel::ShippingSpeedCategory](docs/ShippingSpeedCategory.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::ShippingSpeedCategoryList](docs/ShippingSpeedCategoryList.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::StringList](docs/StringList.md)
+ - [AmzSpApi::FulfillmentOutboundApiModel::SubmitFulfillmentOrderStatusUpdateRequest](docs/SubmitFulfillmentOrderStatusUpdateRequest.md)
+ - [AmzSpApi::FulfillmentOutboundApiModel::SubmitFulfillmentOrderStatusUpdateResponse](docs/SubmitFulfillmentOrderStatusUpdateResponse.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::Timestamp](docs/Timestamp.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::TrackingAddress](docs/TrackingAddress.md)
  - [AmzSpApi::FulfillmentOutboundApiModel::TrackingEvent](docs/TrackingEvent.md)

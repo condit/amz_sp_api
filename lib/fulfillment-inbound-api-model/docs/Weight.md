@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**BigDecimalType**](BigDecimalType.md) |  | 
 **unit** | [**UnitOfWeight**](UnitOfWeight.md) |  | 
+**value** | **Float** | Value of a weight. | 
 
